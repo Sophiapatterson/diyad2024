@@ -3,6 +3,7 @@ package diyad.array;
 public class ArrayBenchmark {
 	
 	public static double addStrings(int n){
+		//System.gc();
 		double start = System.nanoTime();
 		GrowableStringArrayList gsa = new GrowableStringArrayList();
 		for(int k=0; k < n; k++) {

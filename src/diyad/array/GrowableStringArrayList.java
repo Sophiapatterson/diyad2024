@@ -51,7 +51,7 @@ public class GrowableStringArrayList  {
 	
 	private void checkSize() {
 		if (mySize >= myStorage.length) {
-			String[] storage = new String[myStorage.length * 2];
+			String[] storage = new String[myStorage.length + 1000];
 			System.arraycopy(myStorage, 0, storage, 0, myStorage.length);
 			myStorage = storage;
 		}
