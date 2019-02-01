@@ -16,6 +16,14 @@ public class GrowableStringArrayList  {
 		mySize++;
 	}
 	
+	private void checkSize() {
+		if (mySize >= myStorage.length) {
+			String[] storage = new String[(int) (myStorage.length * 2)];
+			System.arraycopy(myStorage, 0, storage, 0, myStorage.length);
+			myStorage = storage;
+		}
+	}
+	
 	public void add(int index, String s) {
 		if (index < 0 || index > mySize) {
 			throw new IndexOutOfBoundsException("bad index in add "+index);
@@ -46,14 +54,6 @@ public class GrowableStringArrayList  {
 		if (index < 0 || index >= mySize) {
 			throw new IndexOutOfBoundsException("index out of bounds " + index
 					+ " of " + mySize);
-		}
-	}
-	
-	private void checkSize() {
-		if (mySize >= myStorage.length) {
-			String[] storage = new String[myStorage.length + 1000];
-			System.arraycopy(myStorage, 0, storage, 0, myStorage.length);
-			myStorage = storage;
 		}
 	}
 

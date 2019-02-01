@@ -21,8 +21,8 @@ public class ArrayDriver {
 		Scanner scan = new Scanner(f);
 	
 		//SimpleStringArrayList ssa = new SimpleStringArrayList();
-		//GrowableStringArrayList ssa = new GrowableStringArrayList();
-		ConformingArrayList<String> ssa = new ConformingArrayList<>();
+		GrowableStringArrayList ssa = new GrowableStringArrayList();
+		//ConformingArrayList<String> ssa = new ConformingArrayList<>();
 		while (scan.hasNext()) {
 			String s = scan.next();
 			ssa.add(s);

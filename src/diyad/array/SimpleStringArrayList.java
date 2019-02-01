@@ -5,7 +5,7 @@ public class SimpleStringArrayList {
 	
 	private String[] myStorage;
 	private int mySize;
-	private static int MAX_SIZE = 1000;
+	private static int MAX_SIZE = 10000;
 	
 	public SimpleStringArrayList() {
 		myStorage = new String[MAX_SIZE];

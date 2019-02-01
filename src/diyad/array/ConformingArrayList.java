@@ -65,7 +65,7 @@ public class ConformingArrayList<E> implements List<E> {
 
 	@Override
 	public boolean contains(Object o) {
-		for(E elt : this) {
+		for(Object elt : myStorage) {
 			if (elt.equals(o)) return true;
 		}
 		return false;
@@ -73,8 +73,9 @@ public class ConformingArrayList<E> implements List<E> {
 
 	@Override
 	public Iterator<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings("unchecked")
+		List<E> list= (List<E>) Arrays.asList(myStorage).subList(0, mySize);
+		return list.iterator();
 	}
 
 	@Override
@@ -175,6 +176,19 @@ public class ConformingArrayList<E> implements List<E> {
 	public List<E> subList(int fromIndex, int toIndex) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public static void main(String[] args) {
+		ConformingArrayList<String> list = new ConformingArrayList<>();
+		list.add("hello");
+		list.add("goodbye");
+		System.out.println(list.size());
+		if (list.contains("hello")) {
+			System.out.println("does!");
+		}
+		for(String s : list) {
+			System.out.println(s);
+		}
 	}
 
 }
