@@ -8,7 +8,7 @@ public class ArrayDriver {
 
 	public static int read(File f) throws FileNotFoundException {
 		Scanner scan = new Scanner(f);
-
+		scan.useDelimiter("\\S+");
 		int w = 0;
 		while (scan.hasNext()) {
 			String s = scan.next();
@@ -19,7 +19,8 @@ public class ArrayDriver {
 	}
 	public static int readArray(File f) throws FileNotFoundException {
 		Scanner scan = new Scanner(f);
-	
+		scan.useDelimiter("\\S+");
+		
 		//SimpleStringArrayList ssa = new SimpleStringArrayList();
 		GrowableStringArrayList ssa = new GrowableStringArrayList();
 		//ConformingArrayList<String> ssa = new ConformingArrayList<>();
